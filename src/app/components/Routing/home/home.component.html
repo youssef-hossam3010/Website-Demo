@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col">
+      <div class="row">
+        <form class="form"  [formGroup]="registerationFormValidation" (ngSubmit)="Show()">
+  
+        <div class="form-group d-flex">
+            <label class="col-3">Name</label>
+          <input formControlName="name" class="form-control text-center" type="text"/>
+          <div *ngIf="!NameValid" class="alert alert-danger">   
+            Name Must Be > 3
+          </div>
+        </div>
+  
+        <div class="form-group d-flex">
+          <label class="col-3">Age</label>
+          <input formControlName="age" class="form-control text-center" type="text"/>
+          <div *ngIf="!AgeValid" class="alert alert-danger">   
+            age must be between 20 and 40
+          </div>
+        </div>
+
+        <div class="form-group d-flex">
+            <label class="col-3">Email</label>
+            <input formControlName="email" class="form-control text-center" type="text"/>
+            <div *ngIf="!emailValid" class="alert alert-danger">   
+                email must include @
+              </div>
+          </div>
+  
+        <div class="form-group d-flex justify-content-center m-2">
+          <input type="submit" value="ADD" class="btn btn-outline-dark" />
+        </div>
+  
+      </form>
+      </div>
+    </div>
+  </div>
+  
